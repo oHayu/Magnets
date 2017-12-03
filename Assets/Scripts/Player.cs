@@ -32,13 +32,6 @@ public class Player : Ships {
 
     }
 
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.transform.SetParent(glue.transform);
-        }
-    }
-
     protected override void Die() {
         Destroy(gameObject);
         Instantiate(explosion, transform.position, Quaternion.identity);

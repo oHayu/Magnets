@@ -9,7 +9,6 @@ public class Enemy : Ships {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         Vector2 offset = transform.position - target.position;
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
@@ -17,9 +16,23 @@ public class Enemy : Ships {
 
 
 
-        //move towards the player
         if (Vector3.Distance(transform.position, target.position) > 1f) {//move if distance from target is greater than 1
             transform.position = Vector3.MoveTowards(transform.position, target.position, thrust);
         }
     }
+
+
+
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            transform.SetParent(Player.instance.glue.transform);
+            collision.gameObject.GetComponent<Rigidbody2D>().mass += 0.2f;
+            this.enabled = false;
+            this.tag = "Player";
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            Destroy(rb);
+        }
+    }
+
 }
