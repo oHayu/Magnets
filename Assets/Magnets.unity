@@ -377,12 +377,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3162e400bd9d8744ba60532f8a8acd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 5
+  fireRate: 10
   damage: 10
   whatToHit:
     serializedVersion: 2
     m_Bits: 4294967291
-  BulletTrailPrefab: {fileID: 0}
+  BulletTrailPrefab: {fileID: 4142067326740576, guid: cfb1da8c5593118448a4aab1dbb5c5ea,
+    type: 2}
+  MuzzleFlashPrefab: {fileID: 4923928173139838, guid: 658e844cbac015a4b9093bc2cf6a4ab8,
+    type: 2}
+  effectSpawnRate: 8
 --- !u!1 &758100670
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,8 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9744726ed830e4b9b1126920c9271d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 1
-  horizontalSpeed: 1
 --- !u!212 &758100672
 SpriteRenderer:
   m_ObjectHideFlags: 0
