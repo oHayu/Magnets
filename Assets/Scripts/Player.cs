@@ -35,7 +35,7 @@ public class Player : Ships {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.transform.SetParent(glue.transform, true);
+            collision.gameObject.transform.SetParent(glue.transform);
         }
     }
 
