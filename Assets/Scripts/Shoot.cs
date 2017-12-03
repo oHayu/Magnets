@@ -9,7 +9,6 @@ public class Shoot : MonoBehaviour {
     public LayerMask whatToHit;
     
     public Transform BulletTrailPrefab;
-    public Transform MuzzleFlashPrefab;
 
     float timeToSpawnEffect = 0;
     float timeToFire = 0;
@@ -57,10 +56,6 @@ public class Shoot : MonoBehaviour {
     }
     void Effect() {
         Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
-        Transform clone = (Transform)Instantiate(MuzzleFlashPrefab,firePoint.position,firePoint.rotation);
-        clone.parent = firePoint;
-        float size = Random.Range(0.6f, 0.9f);
-        clone.localScale = new Vector3(size, size, size);
-        Destroy(clone.gameObject, 0.02f);
+
     }
 }
