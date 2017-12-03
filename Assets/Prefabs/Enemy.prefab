@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4700397468210482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ship12Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4269710575753668}
   - component: {fileID: 33646836806552894}
   - component: {fileID: 23887966212809662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4657845402311150}
   - component: {fileID: 33764579007073204}
   - component: {fileID: 23083097933816066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4607598194381392}
   - component: {fileID: 33698843473140354}
   - component: {fileID: 23063088241728276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4457474423314748}
   - component: {fileID: 33865737905629072}
   - component: {fileID: 23687820283160244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 114456918870377550}
   - component: {fileID: 50587973493671230}
   - component: {fileID: 60558038302062886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543d1fdfc9c49f94991f5aaf673efd88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 50587973493671230}
   thrust: 0.1
   health: 1
   target: {fileID: 0}

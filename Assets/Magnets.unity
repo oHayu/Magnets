@@ -138,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 709118584}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182215466
 GameObject:
@@ -380,7 +380,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426856471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.72, y: -0.01, z: -10}
+  m_LocalPosition: {x: 5.72, y: -0.01, z: -9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 226473972}
@@ -442,9 +442,9 @@ GameObject:
   - component: {fileID: 709118584}
   - component: {fileID: 709118583}
   - component: {fileID: 709118582}
-  - component: {fileID: 709118581}
   - component: {fileID: 709118580}
   - component: {fileID: 709118585}
+  - component: {fileID: 709118581}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -468,11 +468,11 @@ MonoBehaviour:
   thrust: 500
   health: 1
   explosion: {fileID: 0}
---- !u!58 &709118581
-CircleCollider2D:
+  glue: {fileID: 1857513375}
+--- !u!60 &709118581
+PolygonCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 58395770795937824, guid: cf1f91c441868ff4cb428887f1fefb5e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709118579}
   m_Enabled: 1
@@ -481,9 +481,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4045435}
-  serializedVersion: 2
-  m_Radius: 0.9822533
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.82149076, y: 0.15565898}
+      - {x: -0.07299709, y: 0.3977754}
+      - {x: -1.0058041, y: -0.14721383}
+      - {x: -1.0622649, y: -1.0827556}
+      - {x: -0.35814905, y: -0.8564495}
+      - {x: -0.04636383, y: -1.6519651}
+      - {x: 0.43115425, y: -0.8529768}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 1.1882968, y: -1.1691704}
 --- !u!50 &709118582
 Rigidbody2D:
   serializedVersion: 4
@@ -596,6 +614,7 @@ Transform:
   m_LocalPosition: {x: 5.72, y: -0.01, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1857513376}
   - {fileID: 108791877}
   - {fileID: 842475972}
   - {fileID: 814895594}
@@ -650,7 +669,7 @@ Transform:
   - {fileID: 1224704010}
   - {fileID: 1084768754}
   m_Father: {fileID: 709118584}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!1 &842475971
 GameObject:
@@ -680,7 +699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 709118584}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!199 &842475973
 ParticleSystemRenderer:
@@ -4246,26 +4265,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 50587973493671230, guid: 55cd26c46d7189845a1970b8e499b9f6,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114456918870377550, guid: 55cd26c46d7189845a1970b8e499b9f6,
         type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 709118584}
-    - target: {fileID: 114456918870377550, guid: 55cd26c46d7189845a1970b8e499b9f6,
-        type: 2}
-      propertyPath: thrust
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114456918870377550, guid: 55cd26c46d7189845a1970b8e499b9f6,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55cd26c46d7189845a1970b8e499b9f6, type: 2}
   m_IsPrefabParent: 0
@@ -4450,6 +4454,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 51.6}
   m_EdgeRadius: 0
+--- !u!1 &1857513375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1857513376}
+  m_Layer: 9
+  m_Name: Glue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1857513376
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1857513375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 709118584}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869392903
 GameObject:
   m_ObjectHideFlags: 0
