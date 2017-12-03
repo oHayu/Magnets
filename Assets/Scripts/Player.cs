@@ -28,7 +28,7 @@ public class Player : Ships {
         Vector2 pivotPoint = new Vector2(Camera.main.WorldToScreenPoint(transform.position).x, Camera.main.WorldToScreenPoint(transform.position).y);
         Vector2 offset = new Vector2(Input.mousePosition.x - pivotPoint.x, Input.mousePosition.y - pivotPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 270));
+        transform.localRotation = Quaternion.Euler(new Vector3(30f, 0f, angle - 270));
 
     }
 

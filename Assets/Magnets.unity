@@ -254,7 +254,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 8.31
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -276,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 182215466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.72, y: -0.01, z: -9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -697,7 +697,7 @@ MonoBehaviour:
   damage: 10
   whatToHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   BulletTrailPrefab: {fileID: 4142067326740576, guid: cfb1da8c5593118448a4aab1dbb5c5ea,
     type: 2}
   effectSpawnRate: 10
@@ -4390,7 +4390,7 @@ Prefab:
     - target: {fileID: 114456918870377550, guid: 55cd26c46d7189845a1970b8e499b9f6,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55cd26c46d7189845a1970b8e499b9f6, type: 2}
