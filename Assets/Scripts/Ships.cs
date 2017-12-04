@@ -6,8 +6,7 @@ public class Ships : MovingObject {
     public int health = 1;
     public GameObject explosion;
 
-    public float RotationY(Vector2 movement, Vector2 reference)
-    {
+    public float RotationY(Vector2 movement, Vector2 reference) {
         float leftright = movement.x * -reference.y + movement.y * reference.x;
         return Mathf.Clamp(leftright * 10, -30, 30);
     }

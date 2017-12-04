@@ -102,9 +102,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4194042612793676}
-  - component: {fileID: 114456918870377550}
   - component: {fileID: 50587973493671230}
   - component: {fileID: 60558038302062886}
+  - component: {fileID: 114074178318419764}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -417,20 +417,22 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
---- !u!114 &114456918870377550
+--- !u!114 &114074178318419764
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883123718305560}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543d1fdfc9c49f94991f5aaf673efd88, type: 3}
+  m_Script: {fileID: 11500000, guid: fa02bc3f0e7ccbf40b3e3d9a4602e05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50587973493671230}
+  rb: {fileID: 0}
   thrust: 0.1
   health: 1
   explosion: {fileID: 142012, guid: baabc9ffb3f209a4fb51593beeca506f, type: 2}
-  target: {fileID: 404718, guid: cf1f91c441868ff4cb428887f1fefb5e, type: 2}
   score: 10
+  target: {fileID: 404718, guid: cf1f91c441868ff4cb428887f1fefb5e, type: 2}
+  hasAction: 1
+  actionRate: 4
