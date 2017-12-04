@@ -41,6 +41,7 @@ public class Player : Ships {
 
     public void ChangeBombAmount(int change) {
         availableBombs += change;
+        GameController.instance.bombUsed();
     }
 
     IEnumerator killGluedOn() {

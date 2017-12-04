@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
     public static GameController instance;
     public bool gameOver = false, playing = false;
-    public GameObject player;
     private int score;
-    public Text scoreText, gameOverText, startText;
+    public Text scoreText, gameOverText, startText, bombText;
 
     void Awake() {
         if (instance == null) {
@@ -45,8 +44,12 @@ public class GameController : MonoBehaviour {
         ChangeMode();
     }
 
+    public void bombUsed() {
+        bombText.text = "Bombs: " + Player.instance.availableBombs.ToString();
+    }
     private void ChangeMode() {
         scoreText.enabled = !gameOver;
+        bombText.enabled = !gameOver;
         Spawner.instance.canSpawnChange();
         gameOverText.enabled = gameOver;
         startText.enabled = gameOver;
