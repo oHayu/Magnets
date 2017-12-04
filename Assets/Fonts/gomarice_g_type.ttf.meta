@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6a05e36b0838d774f832ce8027964eb5
-timeCreated: 1512346634
+guid: 975e53de11d84d34d8e2a28f8e3a0225
+timeCreated: 1512348308
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: MrRobot
+  fontName: G-Type
   fontNames:
-  - MrRobot
+  - G-Type
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

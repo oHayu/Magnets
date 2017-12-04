@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class GameControl : MonoBehaviour {
-    public static GameControl instance;
+public class GameController : MonoBehaviour {
+    public static GameController instance;
     public bool gameOver = false;
-    private int score;
+    private int score, health = 3;
     public Text scoreText;
 
     void Awake() {

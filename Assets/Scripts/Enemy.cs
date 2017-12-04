@@ -29,6 +29,6 @@ public class Enemy : Ships {
 
     protected override void Die() {
         base.Die();
-        GameController.instance.UpdateScore(this.score);
+        //GameController.instance.UpdateScore(this.score);
     }
 }
