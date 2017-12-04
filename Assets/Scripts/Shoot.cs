@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour {
     public float effectSpawnRate = 10;
     Transform firePoint;
 
-    void Awake() {
+    void Start() {
         firePoint = transform.Find("FirePoint");
         if (firePoint == null) {
             Debug.LogError("No firepoint? wat?");
@@ -51,6 +51,9 @@ public class Shoot : MonoBehaviour {
 
         if (hit.collider != null) {
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
+            Debug.Log("Shit nigga, y dis no run");
+            //hit.transform.gameObject.GetComponent<Enemy>().Damage();
+            Destroy(hit.transform.gameObject);
         }
 
     }

@@ -25,7 +25,8 @@ public class Enemy : Ships {
 
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Player")
+        {
             transform.SetParent(Player.instance.glue.transform);
             collision.gameObject.GetComponent<Rigidbody2D>().mass += 0.2f;
             this.enabled = false;
@@ -34,5 +35,4 @@ public class Enemy : Ships {
             Destroy(rb);
         }
     }
-
 }
