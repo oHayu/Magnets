@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ships : MovingObject {
     public int health = 1;
+    public GameObject explosion;
 
     public float RotationY(Vector2 movement, Vector2 reference)
     {
@@ -17,5 +18,10 @@ public class Ships : MovingObject {
         if (health <= 0) {
             Die();
         }
+    }
+
+    protected override void Die() {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
