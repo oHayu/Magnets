@@ -46,11 +46,10 @@ public class Player : Ships {
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
     protected override void Die() {
         SoundManager.instance.PlayBoom(1);
         GameController.instance.PlayerDied();
-
-
         StartCoroutine("killGluedOn");
         
     }
