@@ -33,12 +33,10 @@ public class Shoot : MonoBehaviour {
                 timeToFire = Time.time + 1 / fireRate;
                 ShootWeapon();
             }
-
-
         }
 
         if (Input.GetButtonDown("Fire2") && Player.instance.availableBombs > 0) {
-            Player.instance.UseBomb();
+            Player.instance.ChangeBombAmount(-1);
             ShootBomb();
         }
 

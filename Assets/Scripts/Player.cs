@@ -39,8 +39,8 @@ public class Player : Ships {
 
     }
 
-    public void UseBomb() {
-        availableBombs -= 1;
+    public void ChangeBombAmount(int change) {
+        availableBombs += change;
     }
 
     IEnumerator killGluedOn() {

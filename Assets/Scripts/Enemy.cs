@@ -32,5 +32,6 @@ public abstract class Enemy : Ships {
         SoundManager.instance.PlayBoom(1);
         base.Die();
         GameController.instance.UpdateScore(this.score);
+        PickupSpawner.instance.spawnPickup(transform);
     }
 }
