@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
     public static GameController instance;
     public bool gameOver = false;
-    private int score, health = 3;
+    private int score;
     public Text scoreText;
 
     void Awake() {

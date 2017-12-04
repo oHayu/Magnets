@@ -28,7 +28,8 @@ public class Enemy : Ships {
     }
 
     protected override void Die() {
+        SoundManager.instance.PlayBoom(1);
         base.Die();
-        //GameController.instance.UpdateScore(this.score);
+        GameController.instance.UpdateScore(this.score);
     }
 }
