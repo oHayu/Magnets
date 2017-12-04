@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour {
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log(playing);
             if (gameOver) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }

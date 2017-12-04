@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyPool : MonoBehaviour {
     public static EnemyPool instance;
-    public GameObject explosion;
 
     void Awake() {
         if (instance == null)
@@ -19,9 +18,6 @@ public class EnemyPool : MonoBehaviour {
             enemyActive.gameObject.GetComponent<Enemy>().Damage();
             yield return new WaitForSeconds(0.05f);
         }
-
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 
 
