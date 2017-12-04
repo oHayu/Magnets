@@ -8,23 +8,26 @@ public class Spawner : MonoBehaviour {
     public float spawnRate;
     private float timeSinceLastSpawn = 0;
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update() {
         if (timeSinceLastSpawn >= spawnRate) {
-            spawnEnemies();
+            StartCoroutine("spawnEnemies");
+
             timeSinceLastSpawn = 0;
         }
         timeSinceLastSpawn += Time.deltaTime;
     }
 
 
-    public void spawnEnemies() {
-        Transform location = spawnPoints[Random.Range(0, 3)];
+    IEnumerator spawnEnemies() {
         int amount = Random.Range(1, 4);
 
-
         for (int i = 0; i < amount; i++) {
-            Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], location.position, Quaternion.identity);
+
+            Transform location = spawnPoints[Random.Range(0, 3)];
+
+            Instantiate(enemyTypes[Random.Range(0, enemyTypes.Count)], location.position + new Vector3(Random.Range(0, 3), Random.Range(0, 3), 0.5f), Quaternion.identity);
+            yield return new WaitForSeconds(1f);
         }
     }
 }
