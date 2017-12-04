@@ -24,16 +24,15 @@ public class Player : Ships {
         rb.velocity = new Vector2(0, 0);
         float x = Input.GetAxis("Horizontal") * thrust;
         float y = Input.GetAxis("Vertical") * thrust;
-        rb.AddForce(new Vector2(x, y));
+        Vector2 movement = new Vector2(x, y);
 
+        rb.AddForce(movement);
 
- 
         Vector2 pivotPoint = new Vector2(Camera.main.WorldToScreenPoint(transform.position).x, Camera.main.WorldToScreenPoint(transform.position).y);
         Vector2 offset = new Vector2(Input.mousePosition.x - pivotPoint.x, Input.mousePosition.y - pivotPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         float leftright = x * -Input.mousePosition.y + y * Input.mousePosition.x;
-        Vector2 movement = new Vector2(x, y);
         Quaternion toRot = Quaternion.Euler(new Vector3(0f, RotationY(movement, Input.mousePosition), angle - 270));
         transform.localRotation = Quaternion.RotateTowards(transform.rotation, toRot, thrust * Time.deltaTime);
 

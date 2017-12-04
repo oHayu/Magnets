@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Ships {
+public abstract class Enemy : Ships {
+    public int score = 10;
     public Transform target;
-    public int score = 10; 
+    public bool hasAction;
+    public float actionRate = 4f;
 
-    void Update() {
-        Vector2 offset = transform.position - target.position;
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90));
-
-        if (Vector3.Distance(transform.position, target.position) > 1f) {//move if distance from target is greater than 1
-            transform.position = Vector3.MoveTowards(transform.position, target.position, thrust);
+    void Start() {
+        if (hasAction) {
+            InvokeRepeating("Action", actionRate, actionRate);
         }
+
+        target = GameObject.Find("Player").transform;
     }
+    protected abstract void Action();
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
