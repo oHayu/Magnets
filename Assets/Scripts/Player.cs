@@ -34,7 +34,8 @@ public class Player : Ships {
 
         float leftright = x * -Input.mousePosition.y + y * Input.mousePosition.x;
         Vector2 movement = new Vector2(x, y);
-        transform.localRotation = Quaternion.Euler(new Vector3(0f, RotationY(movement,Input.mousePosition) , angle - 270));
+        Quaternion toRot = Quaternion.Euler(new Vector3(0f, RotationY(movement, Input.mousePosition), angle - 270));
+        transform.localRotation = Quaternion.RotateTowards(transform.rotation, toRot, thrust * Time.deltaTime);
 
 
 
