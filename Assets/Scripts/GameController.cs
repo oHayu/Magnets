@@ -20,11 +20,13 @@ public class GameController : MonoBehaviour {
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
+            Debug.Log(playing);
             if (gameOver) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
             if (!playing) {
+                playing = true;
                 ChangeMode();
             }
         }
@@ -40,11 +42,13 @@ public class GameController : MonoBehaviour {
     public void PlayerDied() {
         gameOver = true;
         startText.text = "Score: " + this.score.ToString();
+        playing = false; 
         ChangeMode();
     }
 
     private void ChangeMode() {
         scoreText.enabled = !gameOver;
+        Spawner.instance.canSpawnChange();
         gameOverText.enabled = gameOver;
         startText.enabled = gameOver;
     }
