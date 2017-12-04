@@ -446,7 +446,7 @@ Transform:
   m_Children:
   - {fileID: 226473972}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &426856474
 PolygonCollider2D:
@@ -4695,7 +4695,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4194042612793676, guid: 55cd26c46d7189845a1970b8e499b9f6, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114456918870377550, guid: 55cd26c46d7189845a1970b8e499b9f6,
         type: 2}

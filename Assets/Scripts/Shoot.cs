@@ -51,9 +51,7 @@ public class Shoot : MonoBehaviour {
 
         if (hit.collider != null) {
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
-            Debug.Log("Shit nigga, y dis no run");
             hit.transform.gameObject.GetComponent<Enemy>().Damage();
-            
         }
 
     }

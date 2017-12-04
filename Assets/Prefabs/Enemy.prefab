@@ -431,4 +431,5 @@ MonoBehaviour:
   rb: {fileID: 50587973493671230}
   thrust: 0.1
   health: 1
-  target: {fileID: 0}
+  explosion: {fileID: 142012, guid: baabc9ffb3f209a4fb51593beeca506f, type: 2}
+  target: {fileID: 404718, guid: cf1f91c441868ff4cb428887f1fefb5e, type: 2}
