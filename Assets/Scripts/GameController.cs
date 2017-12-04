@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour {
             }
 
             if (!playing) {
+                playing = true;
                 ChangeMode();
             }
         }
@@ -40,11 +41,13 @@ public class GameController : MonoBehaviour {
     public void PlayerDied() {
         gameOver = true;
         startText.text = "Score: " + this.score.ToString();
+        playing = false; 
         ChangeMode();
     }
 
     private void ChangeMode() {
         scoreText.enabled = !gameOver;
+        Spawner.instance.canSpawnChange();
         gameOverText.enabled = gameOver;
         startText.enabled = gameOver;
     }

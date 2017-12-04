@@ -17,13 +17,13 @@ public class SoundManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
     }
-    
+
     public void PlayBoom(int index) {
         boomPlayer.PlayOneShot(booms[index]);
     }
 
 
-    public  void playPew(int index) {
+    public void playPew(int index) {
         pewPlayer.PlayOneShot(pewPews[index]);
     }
 }

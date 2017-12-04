@@ -7,15 +7,15 @@ public class EnemyBull : Enemy {
     private bool hasLocation;
 
     void Update() {
+        if (target != null) {
+            Vector2 offset = transform.position - target.position;
+            float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
-        Vector2 offset = transform.position - target.position;
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-
-        transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90));
+            transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90));
+        }
 
         if (hasLocation) {
             transform.position = Vector3.MoveTowards(transform.position, charge, thrust);
-
         }
     }
 
@@ -23,9 +23,11 @@ public class EnemyBull : Enemy {
         return target.position;
     }
     protected override void Action() {
-        SoundManager.instance.playPew(5);
-        charge = getChargePosition();
-        hasLocation = true;
+        if (target != null) {
+            SoundManager.instance.playPew(5);
+            charge = getChargePosition();
+            hasLocation = true;
+        }
     }
-    
+
 }

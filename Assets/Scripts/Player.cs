@@ -9,7 +9,6 @@ public class Player : Ships {
     float tiltmult = 5.0f;
 
     void Awake() {
-        health = 3;
         rb = GetComponent<Rigidbody2D>();
 
         if (instance == null) {
