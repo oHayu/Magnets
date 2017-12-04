@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Ships {
     public Transform target;
+    public int score = 10; 
 
     void Update() {
         Vector2 offset = transform.position - target.position;
@@ -26,5 +27,8 @@ public class Enemy : Ships {
         }
     }
 
-
+    protected override void Die() {
+        base.Die();
+        GameController.instance.UpdateScore(this.score);
+    }
 }
