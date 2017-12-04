@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour {
     public List<Transform> spawnPoints;
     public List<Enemy> enemyTypes;
     public bool canSpawn; 
-    public float spawnRate;
+    float spawnRate;
     private float timeSinceLastSpawn = 0;
     public GameObject enemySpawned;
 
@@ -23,12 +23,14 @@ public class Spawner : MonoBehaviour {
         canSpawn = !canSpawn;
     }
     void Update() {
+        spawnRate = Mathf.Clamp(5-Mathf.Log((Time.time)/120+1), 0.5f, 10);
         if (timeSinceLastSpawn >= spawnRate && canSpawn) {
             StartCoroutine("spawnEnemies");
 
             timeSinceLastSpawn = 0;
         }
         timeSinceLastSpawn += Time.deltaTime;
+
     }
 
 
@@ -39,7 +41,7 @@ public class Spawner : MonoBehaviour {
 
             Transform location = spawnPoints[Random.Range(0, 3)];
 
-            float bombChance = Random.RandomRange(0f, 1f);
+            float bombChance = Random.Range(0f, 1f);
             Enemy toSpawn = (bombChance >= 0.8f) ? enemyTypes[enemyTypes.Count - 1] : enemyTypes[Random.Range(0, enemyTypes.Count - 1)];
             Enemy temp = Instantiate(toSpawn, location.position + new Vector3(Random.Range(0, 3), Random.Range(0, 3), 0.5f), Quaternion.identity);
             temp.transform.SetParent(enemySpawned.transform);
