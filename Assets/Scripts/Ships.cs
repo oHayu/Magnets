@@ -19,6 +19,7 @@ public class Ships : MovingObject {
         }
     }
 
+
     protected override void Die() {
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);

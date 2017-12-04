@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Ships {
     public GameObject glue;
     public static Player instance;
+    public int availableBombs = 2;
 
-    float tiltmult = 5.0f;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -36,14 +37,13 @@ public class Player : Ships {
         transform.localRotation = Quaternion.RotateTowards(transform.rotation, toRot, thrust * Time.deltaTime);
 
 
-
-        //Debug 
-        if (Input.GetButtonDown("Fire2")) {
-            this.Damage();
-        }
     }
 
-     IEnumerator killGluedOn() {
+    public void UseBomb() {
+        availableBombs -= 1;
+    }
+
+    IEnumerator killGluedOn() {
         foreach (Transform enemyGlued in glue.GetComponentInChildren<Transform>()) {
             Instantiate(explosion, enemyGlued.position, Quaternion.identity);
             enemyGlued.gameObject.SetActive(false);
@@ -58,6 +58,6 @@ public class Player : Ships {
         SoundManager.instance.PlayBoom(1);
         GameController.instance.PlayerDied();
         StartCoroutine("killGluedOn");
-        
+
     }
 }

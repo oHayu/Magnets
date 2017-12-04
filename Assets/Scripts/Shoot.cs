@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour {
     public float fireRate = 0;
     public float damage = 10;
     public LayerMask whatToHit;
-    
+    public GameObject BombBoom; 
     public Transform BulletTrailPrefab;
 
     float timeToSpawnEffect = 0;
@@ -33,10 +33,22 @@ public class Shoot : MonoBehaviour {
                 timeToFire = Time.time + 1 / fireRate;
                 ShootWeapon();
             }
+
+
         }
 
+        if (Input.GetButtonDown("Fire2") && Player.instance.availableBombs > 0) {
+            Player.instance.UseBomb();
+            ShootBomb();
+        }
 
     }
+
+    void ShootBomb() {
+        EnemyPool.instance.killAllEnemies();
+        Instantiate(BombBoom, transform.position, Quaternion.identity);
+    }
+
     void ShootWeapon() {
         SoundManager.instance.playPew(0);
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
